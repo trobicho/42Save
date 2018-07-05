@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 21:39:01 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/04 23:09:28 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/05 10:50:58 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/05 11:19:50 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_fibonacci(int index)
+int	ft_sqrt(int nb)
 {
-	if (index < 0)
-		return (-1);
-	else if (!index)
+	int p;
+
+	if (!nb)
 		return (0);
-	if (index == 1 || index == 2)
+	if (nb == 1)
 		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	p = 1;
+	while (p * p < nb)
+	{
+		p++;
+		if (p * p == nb)
+			return (p);
+	}
+	return (0);
 }

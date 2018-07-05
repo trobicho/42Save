@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 21:39:01 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/04 23:09:28 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/05 11:50:20 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/05 12:18:57 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_fibonacci(int index)
+int	ft_is_prime(int nb)
 {
-	if (index < 0)
-		return (-1);
-	else if (!index)
+	int p;
+
+	if (nb < 2)
 		return (0);
-	if (index == 1 || index == 2)
+	if (nb == 2)
 		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	if (nb % 2 == 0)
+		return (0);
+	p = 3;
+	while (p * p <= nb)
+	{
+		if (nb % p == 0)
+			return (0);
+		p += 2;
+	}
+	return (1);
 }
