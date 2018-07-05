@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 13:33:41 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/05 19:55:25 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/05 15:21:18 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/05 15:27:35 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrev(char *str)
+int	ft_atoi(char *str)
 {
-	int		i;
-	int		len;
-	char	c;
+	int i;
+	int r;
 
-	len = 0;
-	while (str[len] != '\0')
+	i=0;
+	r=0;
+	while(i < 10 && str[i] >= '0' && str[i] <= '9')
 	{
-		len++;
+		r *= 10;
+		r += str[i] - '0';
+		i++;
 	}
-	i = 0;
-	while (i < len)
-	{
-		c = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = c;
-	}
-	return (str);
+	return r;
 }

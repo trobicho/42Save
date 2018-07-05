@@ -2,6 +2,6 @@
 
 int	main(void)
 {
-	ft_print_combn(9);
+	ft_print_combn(5);
 	return 0;
 }
