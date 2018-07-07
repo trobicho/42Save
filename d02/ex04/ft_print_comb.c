@@ -6,17 +6,11 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 20:03:16 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/05 11:40:00 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/06 11:35:59 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
 int		ft_putchar(char c);
-int		ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
 
 void	ft_print_n(int n0, int n1, int n2)
 {

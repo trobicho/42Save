@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/03 19:36:23 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/06 11:34:36 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/06 10:34:07 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/06 10:40:39 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 
-void	ft_is_negative(int n)
+void	ft_putstr(char *str)
 {
-	if (n >= 0)
+	char *c;
+
+	c=str;
+	while(*c != '\0')
 	{
-		ft_putchar('P');
-	}
-	else
-	{
-		ft_putchar('N');
+		ft_putchar(*c);
+		c++;
 	}
 }

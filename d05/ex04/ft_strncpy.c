@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/03 19:36:23 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/06 11:34:36 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/06 15:39:43 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/06 15:49:17 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-
-void	ft_is_negative(int n)
+char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	if (n >= 0)
+	int i;
+
+	i=0;
+	while(src[i] != '\0' && i < n)
 	{
-		ft_putchar('P');
+		if(src[i] != '\0')
+			dest[i] = src[i];
+		else
+			dest[i] = '\0';
+		i++;
 	}
-	else
+	while(i < n)
 	{
-		ft_putchar('N');
+		dest[i] = '\0';
 	}
+	return dest;
 }

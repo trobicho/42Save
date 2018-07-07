@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/03 19:36:23 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/06 11:34:36 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/06 16:16:48 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/06 16:16:57 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-
-void	ft_is_negative(int n)
+char *ft_strstr(char *str, char *to_find)
 {
-	if (n >= 0)
+	char *c_str;
+	char *c_to;
+	char *ptr=0;
+
+	c_str = str;
+	c_to = to_find;
+
+	while (*c_str != '\0' && *c_to != '\0')
 	{
-		ft_putchar('P');
+		if (*c_str == *c_to)
+		{
+			if(c_to == to_find)
+				ptr = c_str;
+			c_to++;
+		}
+		else if(*c_str == *to_find)
+		{
+			ptr = c_str;
+			c_to++;
+		}
+		else
+		{
+			c_to = to_find;
+			ptr=0;
+		}
+		c_str++;
 	}
-	else
-	{
-		ft_putchar('N');
-	}
+	return ptr;
 }
