@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:18:59 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/08 03:12:05 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/08 03:44:17 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/08 04:03:39 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strlowcase(char *str)
 {
-	char *c_s1;
-	char *c_s2;
+	char *c;
 
-	c_s1 = s1;
-	c_s2 = s2;
-	while (*c_s1 == *c_s2 && *c_s1 && *c_s2)
+	c = str;
+	while (*c)
 	{
-		if(c_s1 != '\0')
-			c_s1++;
-		if(c_s2 != '\0')
-			c_s2++;
+		if(*c >= 'A' && *c <= 'Z')
+		{
+			*c = *c - 'A' + 'a';
+		}
+		c++;
 	}
-	return (*c_s1 - *c_s2);
+	return str;
 }

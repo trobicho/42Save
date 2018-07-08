@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:18:59 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/08 03:12:05 by trobicho         ###   ########.fr       */
+/*   Created: 2018/07/08 03:15:58 by trobicho          #+#    #+#             */
+/*   Updated: 2018/07/08 03:43:11 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	char *c_s1;
 	char *c_s2;
+	int i;
 
 	c_s1 = s1;
 	c_s2 = s2;
-	while (*c_s1 == *c_s2 && *c_s1 && *c_s2)
+	i=0;
+	while (i < n && *c_s1 == *c_s2 && (*c_s1 || *c_s2))
 	{
 		if(c_s1 != '\0')
 			c_s1++;
 		if(c_s2 != '\0')
 			c_s2++;
+		i++;
 	}
 	return (*c_s1 - *c_s2);
 }
