@@ -6,7 +6,7 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 18:40:01 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/10 18:58:22 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/10 21:27:44 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ int		ft_strlen(char *str)
 int		ft_arglen(int argc, char **argv)
 {
 	int len;
+	int i;
 
+	i = 1;
+	len = 0;
 	while(i < argc)
 	{
 		len += ft_strlen(argv[i]);
@@ -45,20 +48,34 @@ int		ft_arglen(int argc, char **argv)
 
 char	*ft_concat_params(int argc, char **argv)
 {
-	int i;
-	int len;
-	char *str;
+	int		i;
+	int		j;
+	int		k; 
+	int		len;
+	char	*str;
 
-	len = 0;
-	i = 1;
+	len = ft_arglen(argc, argv);
 	str = NULL;
 	if(len)
 	{
-		str = malloc(len + i);
-		while(i < argc)
+		str = malloc(len + argc - 1);
+		printf("%d\n", len + argc - 1);
+		i = 1;
+		k = 0;
+		while (i < argc)
 		{
-			j=0;
-			while(j < ft_strlen(argv[i]))
+			j = 0;
+			while (j < ft_strlen(argv[i]))
+			{
+				str[k] = argv[i][j];
+				j++;
+				k++;
+			}
+			if (i < argc-1)
+				str[k++] = '\n';
+			else
+				str[k++] = '\0';
+			i++;
 		}
 	}
 	return (str);
