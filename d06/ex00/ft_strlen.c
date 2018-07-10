@@ -6,7 +6,7 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 12:23:37 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/04 12:41:49 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/10 16:25:37 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_strlen(char *str)
 	int		i;
 	char	*c;
 
-	if (str == NULL)
+	if (!str)
 	{
 		return (0);
 	}

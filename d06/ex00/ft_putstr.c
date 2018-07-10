@@ -6,9 +6,11 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 12:19:38 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/04 12:22:33 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/10 16:25:23 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
