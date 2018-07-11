@@ -6,12 +6,11 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 22:41:34 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/11 12:38:01 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/11 14:49:23 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_nb_str(char *str)
 {
@@ -21,6 +20,8 @@ int		ft_nb_str(char *str)
 
 	nb = 1;
 	last_letter = 0;
+	if(!str)
+		return (0);
 	c = str;
 	while (*c != '\0')
 	{
@@ -86,7 +87,6 @@ void	ft_strcpy_wata(char *str, char *strdest)
 char	*ft_find_next_str(char *str)
 {
 	char	*c;
-	int		len;
 
 	c = str;
 	while (*c != '\0')
@@ -105,17 +105,20 @@ char	**ft_split_whitespaces(char *str)
 	int		i;
 
 	nbstr = ft_nb_str(str);
-	str_nosplit = malloc(ft_strlen_wata(str) + nbstr + 1);
-	str_split = malloc(sizeof(char*) * nbstr + 1);
-	ft_strcpy_wata(str, str_nosplit);
-	str_tracker = str_nosplit;
-	str_split[0] = str_nosplit;
-	i = 1;
-	while (i < nbstr)
+	str_split = malloc(sizeof(char*) * (nbstr + 1));
+	if (nbstr)
 	{
-		str_tracker = ft_find_next_str(str_tracker);
-		str_split[i] = ++str_tracker;
-		i++;
+		str_nosplit = malloc(ft_strlen_wata(str) + nbstr + 1);
+		ft_strcpy_wata(str, str_nosplit);
+		str_tracker = str_nosplit;
+		str_split[0] = str_nosplit;
+		i = 1;
+		while (i < nbstr)
+		{
+			str_tracker = ft_find_next_str(str_tracker);
+			str_split[i] = ++str_tracker;
+			i++;
+		}
 	}
 	str_split[nbstr] = 0;
 	return (str_split);
