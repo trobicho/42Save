@@ -6,7 +6,7 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 17:36:46 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/10 17:47:36 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/11 12:34:26 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ char	*ft_strdup(char *src)
 	int		len;
 	char	*dest;
 
-	dest=malloc(ft_strlen(src) + 1);
+	dest = malloc(ft_strlen(src) + 1);
 	return (ft_strcpy(dest, src));
 }
