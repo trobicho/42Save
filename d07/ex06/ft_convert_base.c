@@ -6,7 +6,7 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 15:08:10 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/11 19:42:46 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/12 03:31:18 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ int		myft_read_basenb(char *str)
 	int i;
 	int j;
 
-	if(!str)
+	if (!str)
 		return (0);
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] == '-' || str[i] == '+')
+		if (str[i] == '-' || str[i] == '+')
 			return (0);
 		j = i + 1;
-		while(str[j])
+		while (str[j])
 		{
-			if(str[j] == str[i])
+			if (str[j] == str[i])
 				return (0);
 			j++;
 		}
@@ -67,6 +67,10 @@ int		myft_str_to_nbr(char *nbr, char *base, int bn)
 		i++;
 	}
 	return (nb);
+}
+
+char	*myft_nbr_to_str(int nbr, char *base, int bn)
+{	
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
