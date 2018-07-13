@@ -6,7 +6,7 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 13:59:38 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/11 14:44:11 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/13 14:58:52 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_print_words_tables(char **tab)
 	int i;
 
 	i = 0;
-	while(tab[i])
+	while (tab[i])
 	{
 		myft_putstr(tab[i]);
 		ft_putchar('\n');
