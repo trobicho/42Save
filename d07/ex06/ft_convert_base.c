@@ -6,12 +6,11 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 15:08:10 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/12 03:31:18 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/13 00:45:14 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> //a degager
 
 int		myft_read_basenb(char *str)
 {
@@ -44,33 +43,60 @@ int		myft_str_to_nbr(char *nbr, char *base, int bn)
 	int nb;
 	int fn;
 
-	i = 0;
-	j = 0;
+	i = -1;
 	nb = 0;
-	while(nbr[i])
+	while (nbr[++i])
 	{
 		fn = -1;
-		j = 0;
-		while(j < bn)
+		j = -1;
+		while (++j < bn)
 		{
-			if(nbr[i] == base[j])
+			if (nbr[i] == base[j])
 			{
 				fn = j;
-				break;
+				break ;
 			}
-			j++;
 		}
-		if (fn == -1) /*cas a gerer*/
-			return 0;
+		if (fn == -1)
+			return (0);
 		nb *= bn;
 		nb += fn;
-		i++;
 	}
 	return (nb);
 }
 
+int		pown(int nbr, int bn, int *n)
+{
+	int p;
+
+	p = 1;
+	*n = 1;
+	while (nbr / p >= bn)
+	{
+		p *= bn;
+		(*n)++;
+	}
+	return (p);
+}
+
 char	*myft_nbr_to_str(int nbr, char *base, int bn)
-{	
+{
+	char	*nb_str;
+	int		p;
+	int		i;
+	int		ns;
+
+	p = pown(nbr, bn, &ns);
+	nb_str = malloc(ns);
+	i = 0;
+	while (i < ns)
+	{
+		nb_str[i] = base[nbr / p];
+		nbr %= p;
+		p /= bn;
+		i++;
+	}
+	return (nb_str);
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
@@ -83,8 +109,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	bt = myft_read_basenb(base_to);
 	printf("%d %d\n", bf, bt);
 	if (!bf || !bt)
-		return NULL;
+		return (NULL);
 	nb1 = myft_str_to_nbr(nbr, base_from, bf);
-	printf("%d\n", nb1);
-	return NULL;
+	return (myft_nbr_to_str(nb1, base_to, bt));
 }
