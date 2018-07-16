@@ -6,11 +6,11 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 06:06:37 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/15 06:07:22 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/16 17:09:31 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_count_if(char **tab, int(*f)(char*))
+int	ft_count_if(char **tab, int (*f)(char*))
 {
 	int i;
 	int count;
@@ -19,7 +19,7 @@ int ft_count_if(char **tab, int(*f)(char*))
 	count = 0;
 	while (tab[i])
 	{
-		if(f(tab[i]) == 1)
+		if (f(tab[i]) == 1)
 			count++;
 		i++;
 	}

@@ -6,18 +6,18 @@
 /*   By: trobicho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 06:03:30 by trobicho          #+#    #+#             */
-/*   Updated: 2018/07/15 06:05:38 by trobicho         ###   ########.fr       */
+/*   Updated: 2018/07/16 17:09:23 by trobicho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int i;
 
 	i = 0;
 	while (tab[i])
 	{
-		if(f(tab[i]) == 1)
+		if (f(tab[i]) == 1)
 			return (1);
 		i++;
 	}
