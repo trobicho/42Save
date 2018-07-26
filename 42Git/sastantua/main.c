@@ -3,6 +3,6 @@ void sastantua(int size);
 
 int main(void)
 {
-	sastantua(13);
+	sastantua(50);
 	ft_putchar('\n');
 }
